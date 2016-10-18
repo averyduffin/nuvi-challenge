@@ -1,0 +1,117 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Total Activities</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+    
+    <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-facebook fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{facebook}}</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-instagram">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-instagram fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{instagram}}</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-twitter">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-twitter fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{twitter}}</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-tumblr">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-tumblr fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">{{tumblr}}</div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+<div class="row">
+<div class="col-lg-12">
+    <h1 class="page-header">Feeds</h1>
+</div>
+<!-- /.col-lg-12 -->
+</div>
+    <div class="panel-body">
+        <ul class="chat">
+            <li ng-repeat="act in activities | filter:searchText"  class="left clearfix">
+                <span class="chat-img pull-left">
+                    <img src="{{act.actor_avator}}" width="75px" alt="User Avatar" class="img-circle" />
+                </span>
+                <div class="chat-body clearfix">
+                    <div class="header">
+                        <strong class="primary-font">{{act.actor_name}}</strong>
+                        <h3 class="pull-right text-muted">
+                            <span ng-show="act.provider == 'facebook'" class="fa fa-facebook"></span>
+                            <span ng-show="act.provider == 'instagram'" class="fa fa-instagram"></span>
+                            <span ng-show="act.provider == 'tumblr'" class="fa fa-tumblr"></span>
+                            <span ng-show="act.provider == 'twitter'" class="fa fa-twitter"></span>
+                        </h3>
+                        <small class="pull-right text-muted">
+                            
+                            <i class="fa fa-clock-o fa-fw"></i> {{act.activity_date}}
+                        </small>
+                        
+                    </div>
+                    <p>
+                        {{act.activity_message}}
+                        
+                    </p>
+                    <div class="row">
+                        <div  class="col-xs-1 text-right">
+                            <a href="{{act.activity_url}}" ><i class="fa fa-thumbs-o-up fa-2x"></i></a>
+                        </div>
+                        <div  class="col-xs-1 text-left">
+                            <a href="{{act.activity_url}}"><i class="fa fa-comments fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
